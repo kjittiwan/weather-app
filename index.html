@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather App</title>
+</head>
+<body> 
+  <main>
+    <div class="weather-display" id="weatherDisplay">
+      <div class="location-container" id="locationContainer">
+        <h3 class="condition-text">Partly cloudy</h3>
+        <h2 class="location-text">Bangkok, Thailand</h2>
+      </div>
+      <div class="temp-container">
+        <h1 class="temp-text">31°C</h1>
+      </div>
+      <div class="others-container">
+        <p class="feelslike-text">Feels like: 35.2°C</p>
+        <p class="wind-text">Wind: 19.1 MPH</p>
+        <p class="humidity-text">Humidity: 71%</p>
+      </div>
+      <form action="" id="inputForm">
+        <input 
+        type="text"
+        id="cityInput"
+        class="city-input"
+        name="city-input"
+        placeholder="Search city"
+        >
+      </form>
+      <p class="error-message">No matching location found!</p>
+    </div>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
