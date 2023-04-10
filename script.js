@@ -3,13 +3,12 @@ const inputForm = document.querySelector('form');
 const textInput = document.querySelector('input[type="text"]');
 const getWeather = async(location) => {
     errorMessage.style.display = 'none';
+    textInput.classList.remove('error-input')
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=abfb91983a564e90b5274228231004&q=${location}`, {mode: 'cors'});
     const weatherData = await response.json();
     const processedData = processData(weatherData);
-    console.log(weatherData);
     displayData(processedData);
 }
-
 const processData = (initialData) => {
   const processedData = {
     city: initialData.location.name,
@@ -38,8 +37,9 @@ const displayData = (data) => {
 
 inputForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  getWeather(textInput.value).catch(err => {
+  getWeather(textInput.value).catch(error => {
     errorMessage.style.display = 'block';
+    textInput.classList.add('error-input');
   });
   inputForm.reset();
 })
